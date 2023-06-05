@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Day</title>
+    <link rel="stylesheet" href="Final.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css">
+
+    <script src="./jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/script.js"></script>
+  </head>
+  <style>
+.faq-container {
+  margin-left: 30%;
+  margin-top: 150px;
+  text-align: center;
+  max-width: 700px;
+}
+
+.faq-section {
+  border-bottom: 1px solid #ccc;
+}
+
+.faq-question {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent #555;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px;
+}
+
+.faq-answer.show {
+  display: block;
+}
+
+footer{
+        position: fixed;
+        bottom: 0;
+        width:100%;
+      }
+  </style>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="HomePage.html">
+        </a>
+      </div>
+      <nav>
+        <div id="dropMenu">Drop Menu</div>
+        <div id="menu">
+          <ul>
+            <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="luckyDay.html">Lucky Day</a></li>
+                <li><a href="calender.html">Calender</a></li>
+                <li><a href="qa.html">FAQs</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    
+
+    <div class="faq-container">
+      <h1 class="contactText" style="
+        font-size: 48px;
+        color: #550a21;
+        margin-bottom: 20px;
+        text-align: center;">
+      Frequently Asked Questions
+    </h1>
+      <div class="faq-section">
+        <div class="faq-question">
+          Question 1: How can I submit an event to be featured on your platform?
+          <span class="faq-arrow"></span>
+        </div>
+        <div class="faq-answer">Answer 1: To submit an event for consideration, you can visit our website and navigate to the "Submit an Event" page. There, you will find a form where you can provide all the necessary details about your event, including the date, time, location, description, and any ticketing information. Our team will review the submission and if approved, your event will be featured on our platform.</div>
+      </div>
+    
+      <div class="faq-section">
+        <div class="faq-question">
+          Question 2: Can I purchase tickets for events directly through your website?
+          <span class="faq-arrow"></span>
+        </div>
+        <div class="faq-answer">Answer 2: Yes, you can conveniently purchase tickets for the events featured on our platform. When you browse through the event listings, you will find a "Buy Tickets" button for each event that requires ticket purchase. Simply click on the button, and it will redirect you to the ticketing platform where you can complete your ticket purchase securely.</div>
+      </div>
+    
+      <div class="faq-section">
+        <div class="faq-question">
+          Question 3: How can I stay updated with the latest event announcements and promotions?
+          <span class="faq-arrow"></span>
+        </div>
+        <div class="faq-answer">Answer 3: To stay informed about the latest event announcements, promotions, and exclusive offers, we highly recommend subscribing to our newsletter. You can find the newsletter subscription form on our website's homepage or in the footer section. By subscribing, you will receive regular updates directly in your email inbox, ensuring that you never miss out on exciting events happening in Ankara. Additionally, you can also follow us on our social media channels, where we share event highlights, behind-the-scenes content, and engage with our community of event enthusiasts.</div>
+      </div>
+    
+    </div>
+    
+
+    <script>
+      document.querySelectorAll('.faq-question').forEach(function (question) {
+  question.addEventListener('click', function () {
+    var answer = this.nextElementSibling;
+    answer.classList.toggle('show');
+  });
+});
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script> $(document).ready(function() {
+  $('#dropMenu').click(function() {
+    $('#menu').slideToggle();
+  });
+});</script>
+
+<footer>
+  <p>&copy; 2023 Event Announcements. All rights reserved.</p>
+  <a href="#top">Go to Top</a>
+</footer> 
+  </body>
+</html>

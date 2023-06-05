@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucky Day</title>
+  <script src="./jquery.min.js"></script>
+  <link rel="stylesheet" href="Final.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <style>
+    .main-container {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      margin-left: 35%;
+      margin-right: 35%;
+    }
+
+    #contact-form {
+      max-width: 900px;
+      margin-top: 20px;
+    }
+
+    .form-column {
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      padding: 8px 20px;
+      font-size: 15px;
+      height: 35px;
+      background-color: wheat;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+      cursor: pointer;
+    }
+
+button[type="submit"]:hover {
+  padding: 8px 20px;
+  font-size: 15px;
+  height: 35px; 
+  background-color: wheat;
+  border-radius: 8px;
+}
+
+footer{
+        position: fixed;
+        bottom: 0;
+        width:100%;
+      }
+  </style>
+  <header>
+    <div class="logo">
+      <a href="HomePage.html">
+      </a>
+    </div>
+      <nav>
+
+          <ul>
+            <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="luckyDay.html">Lucky Day</a></li>
+                <li><a href="calender.html">Calender</a></li>
+                <li><a href="qa.html">FAQs</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+      </nav>
+    </header>
+
+  
+    <div class="main-container">
+      <h1 class="contactText" style="font-size: 48px;
+      color:#550A21;
+      margin-bottom: 20px; text-align: center;">Contact Us</h1>
+      <form id="contact-form">
+        <div class="form-column">
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+        
+        <div class="form-column">
+          <input type="text" id="surname" name="surname" placeholder="Surname" required>
+        </div>
+        
+        <div class="form-column">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        
+        <div class="form-column">
+          <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+        </div>
+        
+        <div class="form-column">
+          <textarea id="message" name="message" placeholder="Message" required></textarea>
+        </div>
+        
+        <div class="form-column">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+
+<script>
+  $(document).ready(function() {
+    $('#contact-form').submit(function(event) {
+      event.preventDefault(); 
+      
+      if (validateForm()) {
+        sendData();
+      }
+    });
+    
+    function validateForm() {
+      var isValid = true;
+      
+      $('#contact-form input, #contact-form textarea').each(function() {
+        if ($(this).val() === '') {
+          $(this).addClass('error');
+          isValid = false;
+        } else {
+          $(this).removeClass('error');
+        }
+      });
+      
+      return isValid;
+    }
+    
+    function sendData() {
+      var formData = $('#contact-form').serialize();
+
+      $.ajax({
+        url: 'your-server-url',
+        type: 'POST',
+        data: formData,
+        success: function(response) {
+          console.log('Form data sent successfully');
+        },
+        error: function(error) {
+          console.error('Error sending form data');
+        }
+      });
+    }
+  });
+</script>
+
+    
+
+<footer>
+  <p>&copy; 2023 Event Announcements. All rights reserved.</p>
+  <a href="#top">Go to Top</a>
+</footer>  
+</body>
+</html>

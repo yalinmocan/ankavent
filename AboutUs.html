@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="Final.css">
+
+    <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .about-us {
+      background-color: wheat;
+      padding: 100px;
+      margin-top: 50px;
+    }
+    
+    .about-us h1 {
+      font-size: 24px;
+      margin-bottom: 50px;
+      color: #550A21;
+      text-align: center;
+    }
+    
+    .about-us p {
+      font-size: 18px;
+      color: black;
+      text-align: left;
+    }
+
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        background-color: #550A21;
+        color: wheat;
+        padding-bottom: 50px; 
+        text-align: center;
+    }
+
+    .team-members h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      margin-top: 100px;
+      color: wheat;
+      text-align: center;
+    }
+
+    .member-container {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        margin: 20px;
+        flex-wrap: wrap; 
+        gap: 20px; 
+    }
+
+    .member-image {
+      width: 200px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .member-name {
+      font-size: 16px;
+      color: wheat;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #550A21;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    </style>
+      
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="HomePage.html">
+            </a>
+          </div>
+        <nav>
+            <div id="dropMenu">Drop Menu</div>
+            <div id="menu">
+              <ul>
+                <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="luckyDay.html">Lucky Day</a></li>
+                    <li><a href="calender.html">Calender</a></li>
+                    <li><a href="qa.html">FAQs</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
+              </ul>
+            </div>
+        </nav>
+      </header>
+    
+      <div class="about-us">
+        <h1>Who Are We?</h1>
+        <p>Welcome to Event Announcements, your go-to platform for discovering exciting events in Ankara! We are a team of four students from Bilkent University's CTIS department, passionate about connecting people with diverse and engaging experiences in the city.</p>
+      </br>
+        <p>Our mission is to provide a comprehensive and user-friendly platform that showcases a wide range of events, including concerts, exhibitions, workshops, conferences, and much more.</p>
+    </br>
+        <p>Through our website, you can easily explore upcoming events, get detailed information about each event, and conveniently purchase tickets. We strive to ensure that every user has a seamless and enjoyable experience while discovering and attending events in Ankara.</p>
+    </br>
+        <p>Stay connected with us to stay informed about the latest event updates, exciting promotions, and exclusive offers by subscribing to our newsletter. Follow us on social media to join a thriving community of event enthusiasts and share your experiences.</p>
+    </br>
+        <p>We are committed to enhancing the event culture in Ankara and making your event-going experience unforgettable. Join us on this journey of exploration, inspiration, and celebration!</p>
+      </div>
+    
+      <div class="team-members">
+        <h2>Meet the Team</h2>
+      </br>
+        <div class="member-container">
+          <div class="member-image">
+            <img src="images/Yalin-portrait.avif" alt="Member 1">
+          </div>
+          <div class="member-name">Yalın Mocan</div>
+        </div>
+        <div class="member-container">
+          <div class="member-image">
+            <img src="images/Leyla-portrait.jpeg" alt="Member 2">
+          </div>
+          <div class="member-name">Leyla Khasiyeva</div>
+        </div>
+        <div class="member-container">
+          <div class="member-image">
+            <img src="images/Cihan-portrait.jpeg" alt="Member 3">
+          </div>
+          <div class="member-name">Cihan Kemal Sevinç</div>
+        </div>
+        <div class="member-container">
+          <div class="member-image">
+            <img src="images/Goksu-portrait.webp" alt="Member 4">
+          </div>
+          <div class="member-name">Göksu Kaya</div>
+        </div>
+      </div>
+    
+      <footer>
+        <p>&copy; 2023 Event Announcements. All rights reserved.</p>
+        <a href="#top">Go to Top</a>
+      </footer> 
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+      <script> 
+      $(document).ready(function() {
+  $('#dropMenu').click(function() {
+    $('#menu').slideToggle();
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Calendar</title>
+  <link rel="stylesheet" href="Final.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+  <style>
+    
+    *{margin: 0; padding: 0;}
+    
+    body{
+      margin-top: 150px;
+        background-color: rgb(67, 17, 17);
+    }
+    
+     #calendar {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: rgb(227, 212, 174);
+    }
+
+    .footerCal{
+        margin-top: 150px;
+        bottom: 0;
+        width:100%;
+      }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="HomePage.html">
+      </a>
+    </div>
+    <nav>
+      <div id="dropMenu">Drop Menu</div>
+        <div id="menu">
+          <ul>
+            <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="luckyDay.html">Lucky Day</a></li>
+                <li><a href="calender.html">Calender</a></li>
+                <li><a href="qa.html">FAQs</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+    </nav>
+  </header>
+  <div id="calendar">
+    
+  </div>
+
+
+  <footer class="footerCal">
+    <p>&copy; 2023 Event Announcements. All rights reserved.</p>
+    <a href="#top">Go to Top</a>
+  </footer>  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        events: [
+          {
+            title: 'Taylor Swift: The Eras Tour',
+            start: '2023-06-10',
+            description: 'Open Air Concert'
+          },
+          {
+            title: 'Duman Concert',
+            start: '2023-07-13',
+            description: 'Closed Venue Concert '
+          },
+
+          {
+            title: 'Vera ve Nihilistler',
+            start: '2023-08-08',
+            end: '2023-08-10',
+            description: 'Theatre'
+          }
+        ],
+        eventClick: function(event) {
+          alert('Event: ' + event.title + '\nDescription: ' + event.description);
+        }
+      });
+    });
+  </script>
+
+<script> $(document).ready(function() {
+  $('#dropMenu').click(function() {
+    $('#menu').slideToggle();
+  });
+});</script>
+
+</body>
+</html>

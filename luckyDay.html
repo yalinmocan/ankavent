@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucky Day</title>
+  <script src="script/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="Final.css">
+  
+    <style>
+      table {
+        margin: 200px auto;
+         border-collapse: collapse;
+      }
+
+      td {
+        border:1px solid #AAA ;
+        width: 60px;
+        height: 60px;    
+      }
+
+      .black { background: url('images/ticket.jpeg') center center/cover;
+        cursor: pointer; }
+        
+      .click {
+        color: #550A21; position:absolute; 
+        font-size: 17px;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      #timer{
+        text-align: center;
+        margin-top: -150px;
+        margin-bottom: 50px;
+      }
+
+      #rules{
+        text-align: center;
+        font-size: 20px;
+      }      
+
+      h1{
+        text-align: center;
+      }
+
+      p{
+        text-align: center;
+      }
+      #score{
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      footer{
+        position: fixed;
+        bottom: 0;
+        width:100%;
+      }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="HomePage.html">
+      </a>
+    </div>
+    <nav>
+      <div id="dropMenu">Drop Menu</div>
+      <div id="menu">
+        <ul>
+          <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="event.html">Events</a></li>
+              <li><a href="luckyDay.html">Lucky Day</a></li>
+              <li><a href="calender.html">Calender</a></li>
+              <li><a href="qa.html">FAQs</a></li>
+              <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <div>
+      <table>
+        <tr>
+            <td  id="0"></td>
+            <td  id="1"></td>
+            <td  id="2"></td>
+        </tr>    
+        <tr> 
+            <td  id="3"></td>
+            <td  id="4"></td>
+            <td  id="5"></td>
+        </tr>
+        <tr>
+            <td  id="6"></td>
+            <td  id="7"></td>
+            <td  id="8"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="timer">10</div>
+
+    <div id="rules">Each ticket 10 is points. If you click on a white box you will lose 10 points!!</div>
+
+    <div>
+      <h1>Point Counter</h1>
+      <div id="score">Score: 0</div>
+    </div>    
+    
+    
+    <script>
+      let rnd = Math.floor(Math.random() * 9) ;
+      $("#" + rnd).addClass("black") ;
+
+
+      $("td").click(function(e) {
+      if (!$(this).hasClass("black")) {
+        score -= 10;
+        document.getElementById("score").textContent = "Score: " + score;
+        $("body").append("<div class='click'>-10 Pts</div>")
+          .children()
+          .last()
+          .offset({ top: e.pageY + 25, left: e.pageX })
+          .animate({ fontSize: "-=10px", top: "+=100px" }, 1000, function() {
+            $(this).remove();
+          });
+        return;
+      }
+
+      do {
+        score += 10;
+        document.getElementById("score").textContent = "Score: " + score;
+        rnd = Math.floor(Math.random() * 9);
+      } while ($("#" + rnd).hasClass("black"));
+
+      $(this).removeClass("black");
+      $("#" + rnd).addClass("black");
+
+      $("body").append("<div class='click'>+10 Pts</div>")
+        .children()
+        .last()
+        .offset({ top: e.pageY - 25, left: e.pageX })
+        .animate({ fontSize: "+=10px", top: "-=100px" }, 1000, function() {
+          $(this).remove();
+        });           
+
+
+      })
+
+      const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      function generateRandomLetters() {
+      let randomLetters = '';
+      for (let i = 0; i < 5; i++) {
+        const randomIndex = Math.floor(Math.random() * letters.length);
+        randomLetters += letters[randomIndex];
+      }
+      return randomLetters;
+    }
+
+
+      let timer = 10;
+      let timerInterval = setInterval(function() {
+          timer--;
+          if (timer < 0) {
+              clearInterval(timerInterval);
+              $("td").off("click");
+
+              if(score>=90){
+                const randomLetters = generateRandomLetters();
+                alert("YOU WON!\nYour score is "+score+"!\nDiscount code is "+randomLetters)
+              }else
+              alert("Sorry!!\nYou could not win discound code!!");
+          } else {
+              $("#timer").text(timer);
+          }
+      }, 1000);
+
+      let score = 0;
+
+      
+   </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script> $(document).ready(function() {
+  $('#dropMenu').click(function() {
+    $('#menu').slideToggle();
+  });
+});</script>
+
+<footer>
+  <p>&copy; 2023 Event Announcements. All rights reserved.</p>
+  <a href="#top">Go to Top</a>
+</footer>  
+</body>
+</html>

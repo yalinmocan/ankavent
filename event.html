@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event Page</title>
+  <link rel="stylesheet" href="Final.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.0/css/all.css">
+
+  <style>
+
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    }
+    
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: rgb(3, 3, 3);
+    background-color: antiquewhite;
+  }
+  
+  h1 {
+    color: rgb(183, 147, 80);
+    text-align: center;
+  } 
+
+    .container {
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .event-box {
+      width: 30%;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      border-color: #550A21;
+      border-width: 3px;
+      padding: 10px;
+      background-image: url(./images/backgroung.webp);
+      background-repeat: no-repeat;
+      background-size:cover;
+    }
+
+    .event-box img {
+      width: 70%;
+      align-items: center;
+      height: auto;
+      border-radius: 30px;
+      transition: 0.3s ease;
+    }
+    
+    .event-box img:hover {transform:scale(1.05)}
+
+    .event-description {
+      margin: 0 auto;
+
+    }
+
+    .event-description h3 {
+      margin-top: 20px;
+      color: white;
+    }
+
+    .event-details {
+      margin: 0 auto;
+    }
+    
+    .event-description h4{     
+      background-color: rgb(240, 231, 213);
+      width: 40%;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .price {
+      font-size: 20px bold;
+      background-color: rgb(198, 198, 198);
+      opacity: 50;
+      width: 10%;
+      border-radius: 10px;
+      padding: 10px;
+    } 
+    .event-details .ticket-page {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .event-details .ticket-page button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .ticket-page button:hover{transform:scale(1.1)}
+
+
+
+  </style>
+
+  
+</head>
+ <header>
+  <div class="logo">
+    <a href="HomePage.html">
+    </a>
+  </div>
+  <nav>
+    <div id="dropMenu">Drop Menu</div>
+    <div id="menu">
+      <ul>
+        <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="luckyDay.html">Lucky Day</a></li>
+            <li><a href="calender.html">Calender</a></li>
+            <li><a href="qa.html">FAQs</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <h1>EVENTS</h1>
+  <div class="container">
+    <div class="event-box">
+      <img style="width: 397px; height: 529px;" src="./images/concert1.jpg" alt="Event 1">
+      <div class="event-description">
+        <h3 style>Taylor Swift: the Eras Tour</h3>
+        <h4>Atatürk Orman Çiftliği</p></h4>
+        <h4>June 10, 2023</h4>
+        <p class="price">$50</p>
+      </div>
+      <div class="event-details">
+        <div class="ticket-page">
+          <a href="concert1.html"><button class="ticket-page-btn">Buy Ticket</button></a>
+        </div>
+        </div>
+      </div>
+
+      <div class="event-box">
+        <img style="width: 397px; height: 529px;" src="./images/Duman_Grubu.jpeg" alt="Event 2">
+        <div class="event-description">
+          <h3 style>Duman Concert</h3>
+          <h4>Jolly Joker</p></h4>
+          <h4>July 13, 2023</h4>
+          <p class="price">300₺</p>
+        </div>
+        <div class="event-details">
+          <div class="ticket-page">
+            <a href="concert2.html"><button class="ticket-page-btn">Buy Ticket</button></a>
+          </div>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <img  src="./images/theatre.jpg" alt="Event 3">
+          <div class="event-description">
+            <h3 style>Theatre: Vera ve Nihilistler</h3>
+            <h4>Yakın Sahne</p></h4>
+            <h4>August 8, 2023 <br> August 9, 2023</h4>
+            <p class="price">100₺</p>
+          </div>
+          <div class="event-details">
+            <div class="ticket-page">
+              <a href="theatre.html"><button class="ticket-page-btn">Buy Ticket</button></a>
+            </div>
+            </div>
+          </div>          
+        
+
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Event Announcements. All rights reserved.</p>
+    <a href="#top">Go to Top</a>
+  </footer> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script> $(document).ready(function() {
+    $('#dropMenu').click(function() {
+      $('#menu').slideToggle();
+    });
+  });</script>
+
+</body>
+</html>

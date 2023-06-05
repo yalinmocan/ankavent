@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Announcements Home Page</title>
+  <link rel="stylesheet" href="Final.css">
+
+  <style>
+ .why-us {
+      background-color: wheat;
+      color: black;
+      width: 100%;
+      padding: 30px 0;
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .why-us p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+      .home {
+        width: 100%;
+        height: 100vh; 
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: url("images/Festival1.jpeg");
+}
+
+    .home img{
+        background-size: cover;
+    }
+  
+  .home h1 {
+    font-size: 70px;
+    color:#550A21;
+    margin-bottom: 0px;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    background-color: rgba(0.95, 0.79, 0.19, 0.3);
+    border-radius: 5px;
+  }
+  
+  .home p {
+    font-size: 34px;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    margin-bottom: 20px;
+  }
+  
+  .home button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+  
+  .all-events {
+    width: 100%;
+    padding: 50px 0;
+    margin-bottom: 0;
+    text-align: center;
+    background-color: #550A21;
+  }
+  
+  .all-events h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: wheat;
+  }
+  
+  .all-events p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .all-events button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font: Georgia;
+}
+
+.newsletter {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .newsletter h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #550A21;
+  }
+  
+  .newsletter p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .newsletter input {
+    height: 18px; 
+    padding: 5px;
+    font-size: 15px;
+    color: #550A21;
+  }
+
+  .newsletter button {
+    padding: 8px 20px;
+    font-size: 15px;
+    height: 35px; 
+    background-color: wheat;
+    border-radius: 8px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="HomePage.html">
+      </a>
+    </div>
+    <nav>
+      <div id="dropMenu">Drop Menu</div>
+      <div id="menu">
+        <ul>
+          <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="event.html">Events</a></li>
+              <li><a href="luckyDay.html">Lucky Day</a></li>
+              <li><a href="calender.html">Calender</a></li>
+              <li><a href="qa.html">FAQs</a></li>
+              <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="home">
+      <h1>Welcome to Ankavent</h1>
+
+          <p>Discover exciting events near you.</p>
+          <a href="event.html" ><button>Learn More</button></a> 
+    <div class="logo-image">
+    </div>
+  </section>
+
+  <section class="all-events">
+    <h2>Find Your Next Adventure</h2>
+    <p>Explore a variety of events in Ankara</p>
+    <a href="event.html" ><button>View All Events</button></a>
+  </section>
+
+  <section class="why-us">
+    <p>All events only a click away</p>
+    <p>Discover Ankara with us</p>
+    <p>The platform with best prices</p>
+  </section>
+
+  <section class="newsletter">
+    <h2>Stay Connected</h2>
+    <p>Sign up for our newsletter to receive the latest event updates.</p>
+    <form>
+      <input size="25px" type="email" placeholder="Enter your email">
+      <button height="30px">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Event Announcements. All rights reserved.</p>
+    <a href="#top">Go to Top</a>
+  </footer> 
+  
+
+  <script>
+    
+    const form = document.getElementById('newsletterForm');
+    const emailInput = document.getElementById('emailInput');
+    
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      
+      const email = emailInput.value;
+      
+  
+      alert('Thank you for subscribing!\nEmail: ' + email);
+      
+      form.reset();
+      
+      return false; 
+    });
+
+  </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script> $(document).ready(function() {
+  $('#dropMenu').click(function() {
+    $('#menu').slideToggle();
+  });
+});</script>
+
+</body>
+</html>
